@@ -5,25 +5,14 @@ A Java Swing GUI application for trip planning with MySQL database integration.
 ## Project Structure
 
 ```
-NEW2/
-├── .vscode/
-│   ├── launch.json          # VS Code debug/run configurations
-│   ├── settings.json        # VS Code workspace settings
-│   └── tasks.json           # Build and run tasks
-├── lib/
-│   └── mysql-connector-j-9.4.0.jar  # MySQL JDBC driver
-├── TripPlannerApp.java      # Main GUI application
-├── DatabaseConnection.java  # Database connection handler
-├── DatabaseInitializer.java # ✨ NEW: Automatic database setup
-├── TripDataFetcher.java     # Data access layer
-├── TripResultsWindow.java   # Results display window
-├── run.bat                  # Windows batch script to run
-├── compile.bat              # Windows batch script to compile
-├── run.ps1                  # PowerShell script to run
-├── complete_database_setup.sql  # Manual SQL setup script
-├── DATABASE_FIX_README.md   # ✨ NEW: Database fix documentation
-└── README.md               # This file
-```
+goplanit/
+ ├── src/ # Java source files
+ ├── database/ # SQL scripts
+ ├── data/ # JSON files (if any)
+ ├── scripts/ # Run & compile scripts
+ ├── docs/ # Additional documentation
+ ├── lib/ # External libraries (MySQL connector)
+ ├── README.md
 
 ## Prerequisites
 
@@ -38,8 +27,8 @@ NEW2/
 The application now automatically creates the database, tables, and populates sample data on first run!
 
 **Just make sure:**
-1. MySQL Server is running on localhost:3306
-2. Username: `root`, Password: `harithaishu` (or update in `DatabaseConnection.java`)
+1. MySQL Server is running on localhost:your_id
+2. Username: `root`, Password: `your_password` (or update in `DatabaseConnection.java`)
 3. Run the application - database will be created automatically!
 
 ### Manual Setup (Optional)
