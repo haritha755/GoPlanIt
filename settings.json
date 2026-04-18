@@ -1,0 +1,113 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.debug.settings.hotCodeReplace": "auto",
+    
+    // MySQL JDBC Configuration
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    
+    // Code Runner Configuration for JDBC
+    "code-runner.executorMap": {
+        "java": "cd $dir && javac -cp .:mysql-connector-java-*.jar *.java && java -cp .:mysql-connector-java-*.jar $fileNameWithoutExt"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    
+    // Project Structure
+    "java.project.sourcePaths": ["."],
+    "java.project.outputPath": "bin",
+    
+    // File Management
+    "files.exclude": {
+        "**/*.class": true,
+        "**/bin/**": true
+    },
+    
+    // Debug Configuration
+    "java.debug.launch": {
+        "configurations": [
+            {
+                "type": "java",
+                "name": "Launch TripPlannerApp with MySQL",
+                "request": "launch",
+                "mainClass": "TripPlannerApp",
+                "projectName": "oop",
+                "cwd": "${workspaceFolder}",
+                "classpath": [
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/lib/mysql-connector-j-9.4.0.jar"
+                ],
+                "env": {
+                    "DB_URL": "jdbc:mysql://localhost:3306/tripplanner",
+                    "DB_USER": "root",
+                    "DB_PASSWORD": "password"
+                },
+                "args": [],
+                "console": "integratedTerminal"
+            }
+        ]
+    },
+    
+    // Tasks for Database Operations
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Compile with JDBC",
+                "type": "shell",
+                "command": "javac",
+                "args": [
+                    "-cp", 
+                    ".;lib/mysql-connector-j-9.4.0.jar",
+                    "*.java"
+                ],
+                "group": "build",
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                }
+            },
+            {
+                "label": "Run with MySQL",
+                "type": "shell",
+                "command": "java",
+                "args": [
+                    "-cp",
+                    ".;lib/mysql-connector-j-9.4.0.jar",
+                    "TripPlannerApp"
+                ],
+                "group": "build",
+                "dependsOn": "Compile with JDBC",
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                }
+            }
+        ]
+    },
+    
+    // SQL Extension Settings (if you install SQL extensions)
+    "sql.connections": [
+        {
+            "name": "TripPlanner DB",
+            "driver": "MySQL",
+            "server": "localhost",
+            "database": "tripplanner",
+            "port": 3306,
+            "user": "root",
+            "password": "",
+            "options": {
+                "encrypt": false
+            }
+        }
+    ],
+    
+    // IntelliSense and Error Handling
+    "java.errors.incompleteClasspath.severity": "warning",
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.dependency.syncWithFolderExplorer": true,
+    
+    // Terminal Configuration
+    "terminal.integrated.cwd": "${workspaceFolder}"
+}

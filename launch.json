@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch TripPlannerApp with MySQL",
+      "request": "launch",
+      "mainClass": "TripPlannerApp",
+      "projectName": "NEW2",
+      "cwd": "${workspaceFolder}",
+      "classpath": [
+        "${workspaceFolder}/bin",
+        "${workspaceFolder}/lib/mysql-connector-j-9.4.0.jar"
+      ],
+      "env": {
+        "DB_HOST": "localhost",
+        "DB_PORT": "3306",
+        "DB_USER": "root",
+        "DB_PASSWORD": "harithaishu",
+        "DB_NAME": "trip_planner"
+      }
+    }
+  ]
+}
