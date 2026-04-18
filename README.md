@@ -137,6 +137,17 @@ INSERT INTO food_spots (name, destination) VALUES
 - **Hotel Listings**: View available hotels with pricing
 - **Tourist Spots**: Discover popular tourist attractions
 - **Food Recommendations**: Find local food spots and restaurants
+- ## 📸 Screenshots
+
+### 🏠 Home Screen  
+![Home](docs/images/home.png)
+
+### 🔍 Search Results  
+![Result 1](docs/images/result1.png)  
+![Result 2](docs/images/result2.png)
+
+### 🗺️ Final Trip Plan  
+![Plan](docs/images/plan.png)
 
 ## Troubleshooting
 
